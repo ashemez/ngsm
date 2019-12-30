@@ -17,7 +17,7 @@ public class ServiceRestController {
 	@Autowired
     ServiceRepo serviceRepo;
 	
-	@GetMapping("/GetFilteredServices")
+	@GetMapping("/api/v1/GetFilteredServices")
 	public ResponseEntity<?> GetFilteredServices(
 			@RequestParam(name="page", required=true, defaultValue="0") Integer page,
 			@RequestParam(name="statusFilter", required=true, defaultValue="0,3,5") String statusFilter,
@@ -32,7 +32,7 @@ public class ServiceRestController {
 
 	}
 	
-	@GetMapping("/PopulateServicesCategoryCount")
+	@GetMapping("/api/v1/PopulateServicesCategoryCount")
 	public ResponseEntity<?> PopulateServicesCategoryCount(
 			@RequestParam(name="spattern", required=true, defaultValue="") String spattern,
 			@RequestParam(name="pretty") Optional<String> pretty) {
@@ -44,7 +44,7 @@ public class ServiceRestController {
 	            HttpStatus.OK);
 	}
 	
-	@GetMapping("/GetServiceCount")
+	@GetMapping("/api/v1/GetServiceCount")
 	public ResponseEntity<?> GetServiceCount(
 			@RequestParam(name="statusFilter", required=false, defaultValue="0,3,5") String statusFilter,
 			@RequestParam(name="spattern", required=false, defaultValue="") String spattern,

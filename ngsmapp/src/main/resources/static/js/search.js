@@ -12,7 +12,7 @@ $(document).ready(function() {
 		console.log('spattern: ' + spattern);
 		srvBoxPageNumber = 1;
 		statusFilter = [0,3,5];
-		ChangeUrl('Business Service View', $(location).attr('origin')+'/index.jsp?page=' + srvBoxPageNumber+'&statusFilter='+statusFilter+'&spattern=' + spattern);
+		ChangeUrl('Business Service View', $(location).attr('origin')+'/index?page=' + srvBoxPageNumber+'&statusFilter='+statusFilter+'&spattern=' + spattern);
 		outerPopulateServicesCategoryCount();
 		//console.log('Searchpopparams----srvboxpagenumber: ' + srvBoxPageNumber+"**statusFilter:**"+statusFilter+"**spattern*"+spattern+"*outerpagecount:*"+outerPageCount);
 		outerPopulateAllServiceBoxes(srvBoxPageNumber,statusFilter,spattern);

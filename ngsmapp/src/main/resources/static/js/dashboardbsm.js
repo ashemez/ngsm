@@ -377,7 +377,7 @@ var unenrollservices=[];
             if($('#datasource_form_def_open_close').hasClass('fa-minus')){
             	$('#datasource_form_def_open_close').removeClass('fa-minus').addClass('fa-plus');
             }
-            ChangeUrl('Business Service View',$(location).attr('origin')+'/kpi.jsp?p=ds');          
+            ChangeUrl('Business Service View',$(location).attr('origin')+'/kpi?p=ds');          
 		});
 
 		//KPI Definition Page Load
@@ -426,7 +426,7 @@ var unenrollservices=[];
             if($('#kpi_form_def_open_close').hasClass('fa-minus')){
             	$('#kpi_form_def_open_close').removeClass('fa-minus').addClass('fa-plus');
             }
-            ChangeUrl('Business Service View',$(location).attr('origin')+'/kpi.jsp?p=kpi');
+            ChangeUrl('Business Service View',$(location).attr('origin')+'/kpi?p=kpi');
 		});
 		
 		//Maintenance Definition Page Load
@@ -451,7 +451,7 @@ var unenrollservices=[];
             if($('#maintenance_form_def_open_close').hasClass('fa-minus')){
             	$('#maintenance_form_def_open_close').removeClass('fa-minus').addClass('fa-plus');
             }
-            //ChangeUrl('Business Service View',$(location).attr('origin')+'/maintenance.jsp');          
+            //ChangeUrl('Business Service View',$(location).attr('origin')+'/maintenance');          
 		});
 		
 		
@@ -544,7 +544,7 @@ var unenrollservices=[];
             	$("#edit_users_form #edit_add_groups").text("Edit");
             }
             
-            ChangeUrl('Business Service View',$(location).attr('origin')+'/admin.jsp?p=users');
+            ChangeUrl('Business Service View',$(location).attr('origin')+'/admin?p=users');
             
 		});
 		
@@ -660,7 +660,7 @@ var unenrollservices=[];
 				$("#edit_roles_form #edit_role_service_permiss").text("Edit");
             }
               
-            ChangeUrl('Business Service View',$(location).attr('origin')+'/admin.jsp?p=roles');
+            ChangeUrl('Business Service View',$(location).attr('origin')+'/admin?p=roles');
             
 		});
 		
@@ -749,7 +749,7 @@ var unenrollservices=[];
 				$("#edit_groups_form #edit_grpadd_roles").text("Edit");
             }
             
-            ChangeUrl('Business Service View',$(location).attr('origin')+'/admin.jsp?p=groups');
+            ChangeUrl('Business Service View',$(location).attr('origin')+'/admin?p=groups');
             
 		});
 
@@ -992,7 +992,7 @@ var unenrollservices=[];
 			} else {
 				statusFilter = 10;
 			}
-			$.get('/GetFilteredServices?page='+page+'&statusFilter='+statusFilter+'&spattern=' + pattern,function(responseJson) {
+			$.get('/api/v1/GetFilteredServices?page='+page+'&statusFilter='+statusFilter+'&spattern=' + pattern,function(responseJson) {
 				if(listgridvalue == 0){
 					$("#servicesboxes .col-md-12").remove();
 				}
@@ -1153,7 +1153,7 @@ var unenrollservices=[];
 		outerPopulateAllServiceBoxes = PopulateAllServiceBoxes;
 		
 		function PopulateServicesCategoryCount(){
-			$.get('/PopulateServicesCategoryCount?spattern=' + spattern, function(responseJson) {
+			$.get('/api/v1/PopulateServicesCategoryCount?spattern=' + spattern, function(responseJson) {
 				$("#checkboxdiv .btn-success .badge").text(responseJson[0]);
 				$("#checkboxdiv .btn-warning .badge").text(responseJson[1]);
 				$("#checkboxdiv .btn-danger .badge").text(responseJson[2]);
@@ -1204,19 +1204,19 @@ var unenrollservices=[];
 			var sid = $(this).attr('serviceid');
 			var sname = $(this).attr('servicename');
 			//console.log("SID:"+sid+" ,servicename:"+sname);
-			window.location.href ="ServiceViewer.jsp?sid="+sid+"&statusFilter="+statusFilter+"&msbval="+minisideval+"&lgval="+listgridvalue;
+			window.location.href ="ServiceViewer?sid="+sid+"&statusFilter="+statusFilter+"&msbval="+minisideval+"&lgval="+listgridvalue;
 			//getServiceTreeData($(this).attr('serviceid'));
 			//$('#contentpage').load('demo_test.txt');
-			// $('#contentpage').load('testtree.jsp');
+			// $('#contentpage').load('testtree');
 		});*/
 		
 		$( "#servicesboxes" ).on('click', 'a', function (){
 			var sid = $(this).attr('serviceid');
 			var sname = $(this).attr('servicename');
-			window.location.href ="ServiceViewer.jsp?sid="+sid+"&page="+srvBoxPageNumber+"&statusFilter="+statusFilter+"&msbval="+minisideval+"&lgval="+listgridvalue+"&spattern="+spattern;
+			window.location.href ="ServiceViewer?sid="+sid+"&page="+srvBoxPageNumber+"&statusFilter="+statusFilter+"&msbval="+minisideval+"&lgval="+listgridvalue+"&spattern="+spattern;
 			//getServiceTreeData($(this).attr('serviceid'));
 			//$('#contentpage').load('demo_test.txt');
-			// $('#contentpage').load('testtree.jsp');
+			// $('#contentpage').load('testtree');
 		});
 
 		$('#checkboxdiv .btn-group .btn').click(function () {
@@ -1231,14 +1231,14 @@ var unenrollservices=[];
 		    			   $(this).show();
 		    	   });*/
 		    	   if(statusFilter.length > 0){
-		    		   ChangeUrl('Business Service View', $(location).attr('origin')+'/index.jsp?page=' + srvBoxPageNumber+'&statusFilter='+statusFilter+'&spattern=' + spattern);
+		    		   ChangeUrl('Business Service View', $(location).attr('origin')+'/index?page=' + srvBoxPageNumber+'&statusFilter='+statusFilter+'&spattern=' + spattern);
 			    	   Paginate(statusFilter,spattern);
 			           $('#pagination_servicesboxes').twbsPagination('show', 1);
 		    		   PopulateAllServiceBoxes(srvBoxPageNumber,statusFilter,spattern);
 		    		   console.log("45678");
 		    	   }
 		    	   else{
-		    		   ChangeUrl('Business Service View', $(location).attr('origin')+'/index.jsp?page=' + srvBoxPageNumber+'&statusFilter='+10+'&spattern=' + spattern);
+		    		   ChangeUrl('Business Service View', $(location).attr('origin')+'/index?page=' + srvBoxPageNumber+'&statusFilter='+10+'&spattern=' + spattern);
 		    		   Paginate(statusFilter,spattern);
 		    		   $('#pagination_servicesboxes').twbsPagination('show', 1);
 		    		   PopulateAllServiceBoxes(srvBoxPageNumber,[10],spattern);
@@ -1259,13 +1259,13 @@ var unenrollservices=[];
 				   });*/  
 		    	   console.log("Length:"+statusFilter.length);
 		    	   if(statusFilter.length > 0){
-		    		   ChangeUrl('Business Service View', $(location).attr('origin')+'/index.jsp?page=' + srvBoxPageNumber+'&statusFilter='+statusFilter+'&spattern=' + spattern);
+		    		   ChangeUrl('Business Service View', $(location).attr('origin')+'/index?page=' + srvBoxPageNumber+'&statusFilter='+statusFilter+'&spattern=' + spattern);
 		    		   Paginate(statusFilter,spattern);
 		    		   $('#pagination_servicesboxes').twbsPagination('show', 1);
 		    		   PopulateAllServiceBoxes(srvBoxPageNumber,statusFilter,spattern);
 		    	   }
 		    	   else{
-		    		   ChangeUrl('Business Service View', $(location).attr('origin')+'/index.jsp?page=' + srvBoxPageNumber+'&statusFilter='+10+'&spattern=' + spattern);
+		    		   ChangeUrl('Business Service View', $(location).attr('origin')+'/index?page=' + srvBoxPageNumber+'&statusFilter='+10+'&spattern=' + spattern);
 		    		   Paginate(statusFilter,spattern);
 		    		   $('#pagination_servicesboxes').twbsPagination('show', 1);
 		    		   PopulateAllServiceBoxes(srvBoxPageNumber,[10],spattern);
@@ -1280,11 +1280,11 @@ var unenrollservices=[];
 			if($("#submenu-1 #dash1 .fa").hasClass("faimagecolor")){
 				$("#servicesboxes .col-md-3").remove();
 				//console.log("srvpagenumber:"+srvBoxPageNumber);			
-				//window.location.href ="/index.jsp?page="+srvBoxPageNumber+"&statusFilter="+statusFilter;
+				//window.location.href ="/index?page="+srvBoxPageNumber+"&statusFilter="+statusFilter;
 				//PopulateServicesCategoryCount();
 				//PopulateAllServiceBoxes(srvBoxPageNumber,statusFilter);
             };
-            window.location.href ="/index.jsp?page="+srvBoxPageNumber+"&statusFilter="+statusFilter+"&msbval="+minisideval+"&lgval="+listgridvalue+"&spattern="+spattern;
+            window.location.href ="/index?page="+srvBoxPageNumber+"&statusFilter="+statusFilter+"&msbval="+minisideval+"&lgval="+listgridvalue+"&spattern="+spattern;
             /*if(!$("#submenu-1").hasClass("collapse in")){
     			$("#mainmenu1 a").trigger("click");
     			$("#submenu-1 #dash1").trigger("focus");
@@ -3557,7 +3557,7 @@ var unenrollservices=[];
 	    function Paginate(statusFilter, pattern){
 	    	if(statusFilter != undefined && statusFilter.length > 0){
 	    		//console.log("URL:"+"/ServiceStatOps?p=getServiceCount&statusFilter="+statusFilter);
-	    		var xurl = '/GetServiceCount?statusFilter='+statusFilter+'&spattern=' + pattern;
+	    		var xurl = '/api/v1/GetServiceCount?statusFilter='+statusFilter+'&spattern=' + pattern;
 		    	$.ajax({
 		    		cache: false,
 		    		url:xurl,
@@ -3675,7 +3675,7 @@ var unenrollservices=[];
         //$("#servicesboxes .col-md-3").remove();
         $("#searchboxes .col-md-3").remove();
         ClearIntervals();
-        ChangeUrl('Business Service View', $(location).attr('origin')+'/index.jsp?page=' + srvBoxPageNumber+'&statusFilter='+statusFilter+'&spattern=' + spattern);
+        ChangeUrl('Business Service View', $(location).attr('origin')+'/index?page=' + srvBoxPageNumber+'&statusFilter='+statusFilter+'&spattern=' + spattern);
         outerPopulateAllServiceBoxes(srvBoxPageNumber,statusFilter,spattern);
         //$('.js-typeahead').typeahead('destroy');
         //outerPopulateAllSearchedBoxes(srvBoxPageNumber);
@@ -3702,7 +3702,7 @@ var unenrollservices=[];
 				$("#servicesboxes .col-md-3").remove();
 		        outerPopulateAllServiceBoxes(srvBoxPageNumber,statusFilter);
 				outerPaginate(statusFilter,spattern);
-				ChangeUrl('Business Service View', $(location).attr('origin')+'/index.jsp?page=' + srvBoxPageNumber+'&statusFilter='+statusFilter+'&spattern=' + spattern);
+				ChangeUrl('Business Service View', $(location).attr('origin')+'/index?page=' + srvBoxPageNumber+'&statusFilter='+statusFilter+'&spattern=' + spattern);
 				$('#pagination_servicesboxes').twbsPagination('show', srvBoxPageNumber);
 			}
 		}
