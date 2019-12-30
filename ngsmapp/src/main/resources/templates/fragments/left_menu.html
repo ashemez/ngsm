@@ -1,0 +1,174 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+</head>
+
+<body>
+<div id="wrapper" th:fragment="left_menu">
+    <!-- Navigation -->
+    <nav class="navbar navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img id="logo" src="resource/img/bsview_logo.png" alt="LOGO">
+            </a>
+			<!-- <p class="navbar-text">SERVISIBLE</p>  -->
+        </div>
+        <!-- Top Menu Items -->
+		<div class="top-nav">
+			<ul class="nav navbar-left">
+				<li><a href="#" class="btn" id="sidebarCollapse"><span class="fa fa-bars"></span></a></li>
+			</ul>
+			<ul class="nav navbar-right">
+				<li id="tooltip"><a href="#" data-placement="bottom" data-toggle="tooltip" data-original-title="Stats"><i class="fa fa-bar-chart-o"></i>
+					</a>
+				</li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+				  Username<b class="fa fa-fw fa-user"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#" id="changePassword"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+						<li><a href="LogoutServlet"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+		<div class="collapse navbar-collapse navbar-ex1-collapse" id="sidebar">
+			<ul class="nav navbar-nav side-nav" id="sidebar-nav">
+				<li id="mainmenu1">
+					<a href="#" data-toggle="collapse" data-target="#submenu-1">
+						<i id="image1" class="fa fa-fw fa-dashboard"></i> 
+						<span id="text1">Dashboards</span> 
+						<i id="pull" class="fa fa-fw fa-angle-down pull-right"></i>
+					</a>
+					<ul id="submenu-1" class="collapse">
+						<li id="li_bs"><a id="dash1" href="javascript:;"><i class="fa fa-circle-o"></i> Business Services</a></li>
+						<li id="li_kpiover"><a id="dash2" href="javascript:;"><i class="fa fa-circle-o"></i> KPI Overall</a></li>
+					</ul>
+				</li>
+					<li id="mainmenu2">
+	                    <a href="#" data-toggle="collapse" data-target="#submenu-2">
+							<i id="image2" class="fa fa-fw fa-bar-chart"></i>  
+							<span id="text2">Reporting</span> 
+							<i id="pull" class="fa fa-fw fa-angle-down pull-right"></i>
+						</a>
+	                    <ul id="submenu-2" class="collapse">
+	                        <li id="li_rptlists" ><a href="javascript:;"><i class="fa fa-circle-o"></i> Reports</a></li>
+	                        <li id="li_rptjobs"><a href="javascript:;"><i class="fa fa-circle-o"></i> Report Jobs</a></li>
+	                    </ul>
+	                </li>
+				<li id="mainmenu3">
+                    <a href="#" data-toggle="collapse" data-target="#submenu-3">
+						<i id="image3" class="fa fa-fw fa-calendar"></i>  
+						<span id="text3">KPI Management</span> 
+						<i id="pull" class="fa fa-fw fa-angle-down pull-right"></i>
+					</a>
+                    <ul id="submenu-3" class="collapse">
+                        <li id="li_ds"><a id="data_source" href="javascript:;"><i class="fa fa-circle-o"></i> Data Sources</a></li>
+                        <li id="li_kpi"><a id="kpi" href="javascript:;"><i class="fa fa-circle-o"></i> KPIs </a></li>
+                    </ul>
+                </li>
+				<li id="opmenu">
+                    <a id="opmenua" href="#" data-toggle="collapse" data-target="#op_menu">
+						<i id="image5" class="fa fa-fw fa-wrench"></i>  
+						<span id="text5">Operations Management</span> 
+						<i id="pull" class="fa fa-fw fa-angle-down pull-right"></i>
+					</a>
+                    <ul id="op_menu" class="collapse">
+                        <li id="li_maintenance"><a id="maintenance_mode" href="javascript:;"><i class="fa fa-circle-o"></i> Maintenance</a></li>
+                        <li id="li_eventcatalog"><a id="event_catalog" href="javascript:;"><i class="fa fa-circle-o"></i> Event Catalog</a></li>
+                    </ul>
+                </li>
+	                <li id="adminmenu">
+	                    <a href="#" data-toggle="collapse" data-target="#admin_menu">
+							<i id="image4" class="fa fa-fw fa-cogs"></i>  
+							<span id="text4">Administrator</span> 
+							<i id="pull" class="fa fa-fw fa-angle-down pull-right"></i>
+						</a>
+	                    <ul id="admin_menu" class="collapse">
+	                        <li id="li_usr"><a href="javascript:;" id="user_source" ><i class="fa fa-circle-o"></i> Users</a></li>
+	                        <li id="li_role"><a href="javascript:;" id="role_source"><i class="fa fa-circle-o"></i> Roles</a></li>
+	                        <li id="li_grp"><a href="javascript:;" id="group_source"><i class="fa fa-circle-o"></i> Groups</a></li>
+	                    </ul>
+	                </li>
+                <li id="menu4">
+                    <a href="#"><i id="image4" class="fa fa-fw fa-paper-plane-o"></i> <span id="text4">MENU 4</span></a>
+                </li>
+                <li id="menu5">
+                    <a href="#"><i id="image5" class="fa fa-fw fa fa-question-circle"></i><span id="text5">MENU 5</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+
+	<!-- Page content -->
+    <div id="page-content-wrapper">
+        <div class="page-content">
+            <div class="container-fluid col-md-12">
+				<div id="contentheader" class="panel panel-default">
+					<div class="panel-heading">Dashboards > Business Services</div>
+				</div>
+				<div id="contentpage">
+					<div id = "checkboxdiv" class="well well-sm text-center">
+						<div id="listgridcontainer">
+
+									<button class='btn active' id='listbtn'><i class='fa fa-bars'></i> List</button>
+									<button class='btn' id='gridbtn'><i class='fa fa-th-large'></i> Grid</button>
+
+						</div>
+						<span id="filter"></span>
+						<div class="btn-group" data-toggle="buttons">
+							<label class="btn btn-success tooltipstatus" data-toggle="tooltip" data-placement="top" title="Good!">
+								<input type="checkbox" value="good">
+								<span class="fa fa-check"></span>
+								<span class="badge"></span>
+							</label>			
+							<label class="btn btn-warning tooltipstatus" data-toggle="tooltip" data-placement="top" title="Marginal!">
+								<input type="checkbox" value="marginal">
+								<span class="fa fa-check"></span>
+								<span class="badge"></span>
+							</label>				
+							<label class="btn btn-danger tooltipstatus" data-toggle="tooltip" data-placement="top" title="Bad!">
+								<input type="checkbox" value="bad">
+								<span class="fa fa-check"></span>
+								<span class="badge"></span>
+							</label>			
+						</div>
+						<div id="search_box">
+							<form class="" name="form-services">
+				                <div class="typeahead__container">
+				                    <div class="typeahead__field">
+				                        <span class="typeahead__query">
+				                        spattERn
+				                            <input class=""
+				                            	   id="spattern"
+				                                   type="search"
+				                                   placeholder="Search"
+				                                   value="spatternval"
+				                                   autofocus
+				                                   autocomplete="off" />
+				                        </span>
+				                    </div>
+				                </div>
+				            </form>
+						</div>
+					</div>
+					<!--<div id="searchboxes" class="typeahead-result row collapse"></div>-->
+					<div id="servicesboxes" class="row" onwheel="pageOnWheel(event)"></div> 
+					<!-- Pagination -->
+					<div id="paginationdiv" class="row" onwheel="pageOnWheel(event)">
+						<ul id="pagination_servicesboxes" class="pagination-sm"></ul>
+					</div>     			
+        			<div id="loader" class="loader collapse" style="margin:0 auto;"></div>
+				</div>			
+            </div>
+        	<div class="collapse" id="rightsidebar">
+			</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

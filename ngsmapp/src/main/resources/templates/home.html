@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html" />
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+  
+  <title>Welcome to MoM Analysis </title>
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  
+  <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/main.css}" href="../../css/main.css" />
+  
+  
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">MoJacko</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a th:href="@{/}">Home</a></li>
+          <li><a th:href="@{/login}">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container">
+    <div class="starter-template">
+      <h1>Select Menu: </h1>
+      <h2>Manage <a th:href="@{/admin}">Admin System</a></h2>
+      <h2>Analyze <a th:href="@{/user}">new MoM</a></h2>
+    </div>
+  </div>
+  
+  <div th:replace="fragments/footer :: footer"/>
+</body>
+</html>

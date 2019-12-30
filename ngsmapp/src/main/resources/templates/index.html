@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html" />
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+  
+  <title>Welcome to MoM Analysis </title>
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <!-- 
+  <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/main.css}" href="../../css/main.css" />
+  -->
+  
+  <link href="/css/fonts/fontsFamilyLato.css" rel="stylesheet" type="text/css">
+  <link href="/css/fonts/fontsFamilyMontserrat.css" rel="stylesheet" type="text/css">
+  <link href="/css/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/boatstrap/bootstrap-toggle.css" rel="stylesheet" type="text/css" /> 
+  <link href="/css/multi-select.css" rel="stylesheet" type="text/css" />
+  <link href="/css/vodafonebsm.css" rel="stylesheet" type="text/css">
+  <link href="/css/d3tree/d3-context-menu.css" rel="stylesheet" type="text/css" />
+  <link href="/css/d3tree/editor.css" rel="stylesheet" type="text/css" />
+  <link href="/css/boatstrap/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="/css/boatstrap/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
+  
+  <!-- Query Building Css -->
+  <link href="/css/query_builder/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+  <link href="/css/query_builder/bootstrap-slider.min.css" rel="stylesheet" type="text/css" />
+  <link href="/css/query_builder/selectize.bootstrap3.css" rel="stylesheet" type="text/css" />
+  <link href="/css/query_builder/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
+  <link href="/css/query_builder/awesome-bootstrap-checkbox.css" rel="stylesheet" type="text/css" />
+  <link href="/css/query_builder/query-builder.default.min.css" rel="stylesheet" type="text/css" />
+  <!--  <link href="resource/css/jquery.typeahead.css" rel="stylesheet" type="text/css" />-->
+
+  <script src="/js/jquery/jquery.min.js"></script> 
+  <script src="/js/boatstrap/bootstrap.min.js"></script>
+  <script src="/js/d3tree/d3.v3.min.js"></script>
+  <script src="/js/jquery/jquery.dataTables.min.js"></script>
+
+  <script>
+  	var minisideval=[[${msbval}]];
+  	var listgridvalue=[[${lgval}]];
+  	var srvBoxPageNumber=[[${page}]];
+  	var spattern='[[${spattern}]]';
+  	var statusFilter = [];
+  	statusFilter.push([[${statusFilter}]]);  	
+  </script>
+  
+  <script src="/js/jquery/jquery.multi-select.js"></script>
+  <script src="/js/boatstrap/bootstrap-toggle.js"></script>
+  <script src="/js/bsm.js"></script>
+  <script src="/js/vodafonebsm.js"></script>
+  <script src="/js/search.js"></script>
+  <script src="/js/index.js"></script>
+  <script src="/js/d3tree/underscore-min.js"></script>
+  <script src="/js/d3tree/d3-context-menu.js"></script>
+  <script src="/js/d3tree/dndTree.js"></script>
+  <script src="/js/d3tree/d3.tip.v0.6.3.js"></script>
+  <script src="/js/boatstrap/bootstrapValidator.js"></script>
+  <script src="/js/boatstrap/bootstrap-multiselect.js"></script>
+  <script src="/js/Chart.js"></script>
+  <script src="/js/jquery/jquery.twbsPagination.js"></script>
+  
+ <!-- Query Building js -->
+ <script src="/js/query_builder/moment.min.js"></script> 
+ <script src="/js/query_builder/bootstrap-datepicker.min.js"></script> 
+ <script src="/js/query_builder/bootstrap-slider.min.js"></script> 
+ <script src="/js/query_builder/selectize.min.js"></script> 
+ <script src="/js/query_builder/bootstrap-select.min.js"></script>  
+ <script src="/js/query_builder/sql-parser.js"></script>
+<script src="/js/query_builder/query-builder.standalone.min.js"></script>
+ 
+<script src="/js/outputrule.js"></script>
+<script src="/js/kpidsqueryrule.js"></script>
+<script src="/js/propagate_child2parent.js"></script>
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE -->
+<script src="dist/js/adminlte.js"></script>
+
+</head>
+<body>
+  <div th:replace="fragments/left_menu :: left_menu"/>
+</body>
+</html>
